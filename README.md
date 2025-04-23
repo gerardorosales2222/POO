@@ -1,7 +1,7 @@
 # Programación Orientada a Objetos - Repositorio Oficial
 
 ## Propósito  
-Este repositorio constituye la fuente centralizada de información y desarrollo de la materia **Programación Orientada a Objetos**. A través de una estructura organizada, se busca optimizar el acceso a documentación, prácticas y actividades, fomentando un entorno de trabajo colaborativo similar al de una empresa tecnológica.
+Este repositorio constituye la fuente centralizada de información y desarrollo de la materia **Programación Orientada a Objetos**. A través de una estructura organizada, se busca optimizar el acceso a documentación, prácticas y actividades, fomentando un entorno de trabajo colaborativo similar al de una empresa tecnológica-.
 
 ## Estructura del Repositorio  
 El repositorio se gestiona bajo un modelo de control de versiones que facilita la actualización y consulta del material en dos ramas principales:
