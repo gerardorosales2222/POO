@@ -1,0 +1,47 @@
+package ejemploherencia;
+/**
+ *
+ * @author Carmen
+ */
+public class EjemploHerencia {
+
+    public static void main(String[] args) {
+        Perro miPerro = new Perro();
+        miPerro.nombre = "Rex";
+        miPerro.hacerSonido();//imprime "Guau!"
+    }
+}
+
+
+
+package ejemploherencia;
+
+/**
+ *
+ * @author Carmen
+ */
+//Clase base (SuperClase)
+public class Animal {
+    String nombre;
+    
+    public void hacerSonido(){
+        System.out.println("Sonido generico de animal");
+    }
+}
+
+
+
+package ejemploherencia;
+
+/**
+ *
+ * @author Carmen
+ */
+//Clase derivada (SubClase)
+public class Perro extends Animal{
+    
+    public void hacerSonido(){
+        System.out.println("Guau!");
+    }
+}
+

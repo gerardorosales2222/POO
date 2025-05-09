@@ -1,0 +1,24 @@
+package ejemplo_polimorfino;
+
+/**
+ *
+ * @author Carmen
+ */
+public class ReservaHabitacion extends AccionHotel{
+    public String nroHabitacion;
+    public String nombCliente;
+
+    public ReservaHabitacion(String nroHabitacion, String nombCliente) {
+        this.nroHabitacion = nroHabitacion;
+        this.nombCliente = nombCliente;
+    }
+    
+    
+    @Override
+    public void ejecutarAccion() {
+        System.out.println("----------------------------");
+        System.out.println("Se reservo la habitacion: " + nroHabitacion);
+        System.out.println("Cliente: " + nombCliente);
+    }
+    
+}

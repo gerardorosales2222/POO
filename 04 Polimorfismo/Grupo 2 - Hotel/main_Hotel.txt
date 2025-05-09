@@ -1,0 +1,60 @@
+package ejemplo_polimorfino;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author Carmen
+ */
+public class Hotel {
+   
+    public static void main(String[] args) {
+       Scanner lectura=new Scanner(System.in);
+       
+        System.out.println("BIENVENIDO AL HOTEL");
+        while (true) {   
+            System.out.println("-----------------");
+            System.out.println("MENU : "
+                    + "1. Reservar Habitacion "
+                    + "2. Realizar Pago "
+                    + "3. Salir ");
+            int opc=lectura.nextInt();
+            
+            switch (opc) {
+                case 1:
+                    System.out.println("--------------------------");
+                    System.out.println("RESERVA DE HABITACION");
+                    System.out.println("Numero de Habitacion");
+                    String nroHabitacion=lectura.next();
+                    
+                    System.out.println("Nombre del cliente: ");
+                    String nombCliente=lectura.next();
+                    
+                    ReservaHabitacion reserva=new ReservaHabitacion(nroHabitacion, nombCliente);
+                    reserva.ejecutarAccion();
+                    break;
+                case 2: 
+                    System.out.println("----------------------");
+                    System.out.println("REALIZAR PAGO");
+                    System.out.println("Medio de Pago: ");
+                    String metodoPago=lectura.next();
+                    
+                    System.out.println("Precio de la Habitacion: ");
+                    float montoPago=lectura.nextFloat();
+                    
+                     Pago pago=new Pago(metodoPago, montoPago);
+                     pago.ejecutarAccion();
+                    break;
+                case 3:
+                    System.out.println("Saliendo del hotel");
+                    lectura.close();
+                    System.exit(0);
+                    break;
+                default:
+                    System.out.println("Opcion invalida");
+            }
+            
+        }
+    }
+    
+}

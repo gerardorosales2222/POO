@@ -1,0 +1,56 @@
+package ejemplomultinivel;
+
+/**
+ *
+ * @author Carmen
+ */
+public class EjemploMultinivel {
+
+    public static void main(String[] args) {
+   
+         CocheDeportivo miDeportivo = new CocheDeportivo();
+         miDeportivo.marca = "Ferrari";
+         miDeportivo.numeroPuertas= 2;
+         miDeportivo.turbo= true;
+      
+    }
+    
+}
+
+
+
+package ejemplomultinivel;
+
+/**
+ *
+ * @author Carmen
+ */
+public class Vehiculo {
+    String marca;
+    
+}
+
+
+
+
+package ejemplomultinivel;
+
+/**
+ *
+ * @author Carmen
+ */
+public class Coche extends Vehiculo {
+    int numeroPuertas;
+}
+
+
+
+package ejemplomultinivel;
+
+/**
+ *
+ * @author Carmen
+ */
+public class CocheDeportivo extends Coche {
+    boolean turbo;
+}

@@ -1,0 +1,73 @@
+package ejemplosobreescritura;
+
+/**
+ *
+ * @author Carmen
+ */
+public class EjemploSobreEscritura {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+        Animal miAnimal1 = new Perro();
+        Animal miAnimal2 = new Gato();
+        Animal miAnimal3 = new Vaca();
+        Animal miAnimal4 = new Pajaro();
+        
+        miAnimal1.hacerSonido(); //Imprime "¡Guau!"
+        miAnimal2.hacerSonido(); //Imprime "¡Miau!"
+        miAnimal3.hacerSonido(); //Imprime "¡Muuu!"
+        miAnimal4.hacerSonido(); //Imprime "¡Pio!"
+    }
+    
+}
+
+
+
+package ejemplosobreescritura;
+public class Animal {
+    public void hacerSonido(){
+        System.out.println("Sonido generico de animal");
+    }
+}
+
+
+
+package ejemplosobreescritura;
+public class Gato extends Animal {
+    @Override
+    public void hacerSonido(){
+        System.out.println("¡Miau!");
+    }
+}
+
+
+package ejemplosobreescritura;
+public class Pajaro extends Animal{
+    @Override
+    public void hacerSonido(){
+        System.out.println("¡Pio!");
+    }
+}
+
+
+
+package ejemplosobreescritura;
+public class Perro extends Animal {
+    @Override
+    public void hacerSonido(){
+        System.out.println("¡Guau!");
+    }
+}
+
+
+package ejemplosobreescritura;
+public class Vaca extends Animal{
+    @Override
+    public void hacerSonido(){
+        System.out.println("¡Muuu!");
+    }
+}
+
