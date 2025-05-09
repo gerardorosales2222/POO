@@ -1,0 +1,63 @@
+package ejempropio_supermercado;
+/**
+ *
+ * @author Carmen
+ */
+public class EjemPropio_Supermercado {
+
+    public static void main(String[] args) {
+        Alimento miAlimento = new Alimento();
+        miAlimento.nombre = "Fideo";
+        miAlimento.precio = 1300;
+        miAlimento.fechaCaducidad = "2025-06-08";
+
+        Bebida miBebida = new Bebida();
+        miBebida.nombre = "Coca-Cola";
+        miBebida.precio = 3500;
+        miBebida.tipo = "Refresco";
+
+        System.out.println("Detalles del alimento:");
+        miAlimento.mostrarDetalles();
+
+        System.out.println("--------------------------");
+        System.out.println("Detalles de la bebida:");
+        miBebida.mostrarDetalles();
+    }
+}
+
+
+
+package ejempropio_supermercado;
+public class Producto {
+    String nombre;
+    double precio;
+    
+    public void mostrarDetalles() {
+        System.out.println("NOMBRE: " + nombre + ", PRECIO: $" + precio);
+    }
+}
+
+
+package ejempropio_supermercado;
+public class Alimento extends Producto{
+    String fechaCaducidad;
+
+    @Override
+    public void mostrarDetalles() {
+        super.mostrarDetalles();
+        System.out.println("FECHA DE CADUCIDAD: " + fechaCaducidad);
+    }
+}
+
+
+
+package ejempropio_supermercado;
+public class Bebida extends Producto{
+    String tipo;
+
+    @Override
+    public void mostrarDetalles() {
+        super.mostrarDetalles();
+        System.out.println("TIPO DE BEBIDA: " + tipo);
+    }
+}
