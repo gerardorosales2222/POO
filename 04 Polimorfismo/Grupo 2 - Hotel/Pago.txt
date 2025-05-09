@@ -1,0 +1,23 @@
+package ejemplo_polimorfino;
+/**
+ *
+ * @author Carmen
+ */
+public class Pago extends AccionHotel{
+    public String metodoPago;
+    public float montoPago;
+
+    public Pago(String metodoPago, float montoPago) {
+        this.metodoPago = metodoPago;
+        this.montoPago = montoPago;
+    }
+    
+    
+    @Override
+    void ejecutarAccion() {
+        System.out.println("---------------------------");
+        System.out.println("Pagado con: " + metodoPago);
+        System.out.println("Precio: $ " + montoPago);
+   }
+    
+}

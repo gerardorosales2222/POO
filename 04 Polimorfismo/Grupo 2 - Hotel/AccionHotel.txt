@@ -1,0 +1,9 @@
+package ejemplo_polimorfino;
+
+/**
+ *
+ * @author Carmen
+ */
+abstract class AccionHotel {
+    abstract void ejecutarAccion();
+}
