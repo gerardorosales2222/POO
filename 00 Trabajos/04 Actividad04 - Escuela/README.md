@@ -20,7 +20,7 @@ La clase Profesor debe tener un método:
 public void calificar(Alumno evaluado, Nota nota)
 ```
 
-
+A continuación el main en el que nos vamos a basar para resolver el problema:
 
 ```java
 public class EscuelaPrimaria {
