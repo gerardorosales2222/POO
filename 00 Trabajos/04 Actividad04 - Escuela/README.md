@@ -15,7 +15,7 @@ Tiene un nombre y un grado asociado.
 Tiene un valor y una materia asociada.
 
 ### Método Clave:  
-La clase Profesor debe tener un método:
+La clase Maestro debe tener un método:
 ```java
 public void calificar(Alumno evaluado, Nota nota)
 ```
