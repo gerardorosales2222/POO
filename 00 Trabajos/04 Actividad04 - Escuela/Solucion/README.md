@@ -9,8 +9,8 @@ package escuelaprimaria;
  * @author Profe
  */
 public class Maestro {
-    public String nombre;
-    public String grado;
+    private String nombre;
+    private String grado;
 
     public Maestro(String nombre, String grado) {
         this.nombre = nombre;
@@ -50,8 +50,8 @@ import java.util.ArrayList;
  * @author Profe
  */
 public class Alumno {
-    public String nombre;
-    public ArrayList<Nota> calificaciones = new ArrayList<>();
+    private String nombre;
+    private ArrayList<Nota> calificaciones = new ArrayList<>();
 
     public Alumno(String nombre) {
         this.nombre = nombre;
@@ -95,8 +95,8 @@ package escuelaprimaria;
  * @author Profe
  */
 public class Nota {
-    public float nota;
-    public String materia;
+    private float nota;
+    private String materia;
 
     public Nota(float nota, String materia) {
         this.nota = nota;
