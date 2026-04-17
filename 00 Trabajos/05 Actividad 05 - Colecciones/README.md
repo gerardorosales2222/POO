@@ -77,3 +77,66 @@ public class Fotografia {
     }
 }
 ```
+### 3. Equipo de Fútbol
+
+Clase **Jugador**: Debe tener nombre y posicion.
+
+Clase **Equipo**: Debe tener nombreEquipo y un ArrayList<Jugador>.
+
+Método Clave: **public void presentarPlantel()** que liste a todos los jugadores y sus posiciones.
+```java
+public class Deporte {
+    public static void main(String[] args) {
+        Equipo miEquipo = new Equipo("Los Programadores F.C.");
+        
+        miEquipo.fichar(new Jugador("Agustín", "Arquero"));
+        miEquipo.fichar(new Jugador("Marcos", "Defensa"));
+        miEquipo.fichar(new Jugador("Román", "Delantero"));
+
+        System.out.println("--- Presentación del Equipo ---");
+        miEquipo.presentarPlantel();
+    }
+}
+```
+### 4. Carrito de Compras (Desafío Final)
+
+Clase Producto: Debe tener nombre y precio.
+
+Clase Carrito: Debe tener un ArrayList<Producto>.
+
+Métodos Clave:
+
+public void mostrarDetalle(): Recorre la lista y muestra cada producto con su precio.
+
+public double calcularTotal(): (Lógica de Acumulación) Debe recorrer la lista, sumar los precios de todos los productos y retornar el valor final.
+
+**Código Base para el Main**
+
+A continuación, el main en el que nos vamos a basar para resolver el desafío final:
+
+```java
+public class GestionCompras {
+    public static void main(String[] args) {
+        // Creamos los productos
+        Producto p1 = new Producto("Teclado Mecánico", 4500.50);
+        Producto p2 = new Producto("Mouse Óptico", 1200.00);
+        Producto p3 = new Producto("Monitor 24'", 15000.90);
+
+        // Creamos el carrito
+        Carrito miCarrito = new Carrito();
+
+        System.out.println("--- Cargando Carrito de Compras ---");
+        miCarrito.añadir(p1);
+        miCarrito.añadir(p2);
+        miCarrito.añadir(p3);
+
+        System.out.println("\n--- Resumen de Compra ---");
+        miCarrito.mostrarDetalle();
+
+        System.out.println("\n--------------------------");
+        double total = miCarrito.calcularTotal();
+        System.out.println("TOTAL A PAGAR: $" + total);
+        System.out.println("--------------------------");
+    }
+}
+```
