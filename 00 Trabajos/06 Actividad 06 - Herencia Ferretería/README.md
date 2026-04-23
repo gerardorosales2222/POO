@@ -1,23 +1,4 @@
-# Actividad 05 – Sistemas de Gestión de Colecciones
-
-> [!TIP]
->En programación, una colección es una estructura de datos que nos permite agrupar múltiples objetos en una sola unidad.
->Si una variable es como una caja donde solo cabe un objeto por ejempo una sola nota:
->```java
->public class Alumno {
->    private String nombre;
->    private float nota_parcial1;
->    private float nota_parcial2;
->    private float nota_final;
->}
->```
-Una colección es como un estante diseñado específicamente para guardar y organizar muchas de esas cajas:
->```java
->public class Alumno {
->    private String nombre;
->    private ArrayList<Nota> calificaciones = new ArrayList<>();
->}
->```
+# Actividad 06 – Ferretería Herencia
 
 **Objetivo:** Implementar un sistema de gestión de stock utilizando el concepto de Herencia. El propósito es modelar una jerarquía de clases donde una superclase genérica (Producto) provea los atributos comunes, mientras que las subclases especialicen el comportamiento y las características según el rubro.
 
