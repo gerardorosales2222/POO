@@ -118,7 +118,7 @@ public class Main {
 
 4.- Completar el código faltante en la siguiente clase Main, donde ya se establecen las referencias pero faltan las clases asociadas.
 
-### Código proporcionado (Main.java):
+### Código del main.java:
 ```java
 public class Main {
     public static void main(String[] args) {
@@ -145,3 +145,109 @@ Crear las clases `ReservaHabitacion` y `Pago`, que deben sobrescribir `ejecutarA
 Probar el código completando la lógica de cada clase.
 
 📌 Tip: Usar el polimorfismo de subtipos para que `AccionHotel` pueda referenciar objetos de `ReservaHabitacion` y `Pago`.
+
+-----
+## Polimorfismo y declaración de variables
+Retomemos el ejemplo del concecionario de la Actividad 7.
+### ¿Por qué declaramos `Vehiculo auto1 = new Auto(...)` en lugar de `Auto auto1 = new Auto(...)`?
+
+Esta es una de las preguntas más frecuentes al trabajar con herencia y polimorfismo. Vamos a entenderla con un ejemplo práctico.
+
+### Ambas formas son válidas, pero tienen diferentes propósitos
+
+```java
+// Opción 1: Declaración específica
+Auto auto1 = new Auto("Toyota", "Corolla", 25000000.00, 4);
+
+// Opción 2: Declaración polimórfica (la que usamos en esta actividad)
+Vehiculo auto1 = new Auto("Toyota", "Corolla", 25000000.00, 4);
+```
+
+### ¿Cuál es la diferencia?
+
+| Declaración | Tipo declarado | Tipo real | ¿Qué permite? |
+|-------------|----------------|-----------|----------------|
+| `Auto auto1 = new Auto(...)` | `Auto` | `Auto` | Acceder a métodos específicos de `Auto` |
+| `Vehiculo auto1 = new Auto(...)` | `Vehiculo` | `Auto` | Tratar al objeto como `Vehiculo` (polimorfismo) |
+
+### La analogía del concesionario
+
+> Imagina que entras a un concesionario y dices: *"Necesito un **vehículo**"*.
+> 
+> El vendedor puede traerte un **Auto** o una **Moto**, porque ambos **son** vehículos. 
+> 
+> En cambio, si dices: *"Necesito un **Auto**"*, solo podrás obtener autos, nunca motos.
+
+**En programación es igual:**
+- Declarar como `Vehiculo` te permite **cambiar el tipo específico** sin modificar el resto del código
+- Declarar como `Auto` te **limita** a trabajar solo con autos
+
+### ¿Por qué usamos `Vehiculo` en esta actividad?
+
+**Objetivo didáctico:** Aprender **Polimorfismo**
+
+El polimorfismo permite que una variable de tipo padre (`Vehiculo`) pueda hacer referencia a objetos de cualquier clase hija (`Auto` o `Moto`).
+
+```java
+// Esto ES polimorfismo
+Vehiculo miVehiculo;
+
+miVehiculo = new Auto("Toyota", "Corolla", 25000000.00, 4);
+miVehiculo.mostrarDetalles(); // Muestra detalles de Auto
+
+miVehiculo = new Moto("Honda", "CB500F", 12000000.00, 500);
+miVehiculo.mostrarDetalles(); // Muestra detalles de Moto
+```
+
+### La ventaja clave: Flexibilidad
+
+Gracias a declarar como `Vehiculo`, podemos crear métodos que trabajen con **cualquier** tipo de vehículo:
+
+```java
+// Este método puede recibir TANTO un Auto como una Moto
+public void procesarVenta(Vehiculo vehiculo) {
+    vehiculo.mostrarDetalles();  // Se comporta diferente según el tipo REAL
+}
+
+// Podemos llamarlo con distintos tipos
+procesarVenta(new Auto("Toyota", "Corolla", 25000000.00, 4));
+procesarVenta(new Moto("Honda", "CB500F", 12000000.00, 500));
+```
+
+### ⚠️ ¿Hay algo que NO pueda hacer con la declaración polimórfica?
+
+Sí. Al declarar como `Vehiculo`, **no puedes acceder directamente** a los métodos específicos de `Auto` o `Moto`:
+
+```java
+Vehiculo auto1 = new Auto("Toyota", "Corolla", 25000000.00, 4);
+
+// Esto NO compila:
+// auto1.getCantidadPuertas();  
+
+// Para acceder a métodos específicos, necesitas hacer "casting":
+if (auto1 instanceof Auto) {
+    Auto autoReal = (Auto) auto1;
+    int puertas = autoReal.getCantidadPuertas(); // ✅ Ahora sí funciona
+}
+```
+
+### 📝 Resumen para recordar
+
+| Si necesitas... | Declara como... |
+|----------------|-----------------|
+| Usar métodos específicos de `Auto` (ej: `getCantidadPuertas()`) | `Auto` |
+| Tratar a todos los vehículos de forma genérica y aprovechar el polimorfismo | `Vehiculo` |
+
+### 🎓 Conclusión para esta actividad
+
+En **Gestión de Concesionaria** usamos `Vehiculo auto1 = new Auto(...)` porque:
+
+1. ✅ Queremos **demostrar el polimorfismo** (el objetivo de la actividad)
+2. ✅ El método `imprimirFactura()` solo necesita los métodos de `Vehiculo`
+3. ✅ La clase `Venta` tiene un atributo de tipo `Vehiculo`, no `Auto` ni `Moto`
+4. ✅ Preparamos el código para ser **extensible** (si agregamos `Camion`, el código sigue funcionando)
+
+---
+
+> "Programar pensando en el polimorfismo es programar pensando en el futuro."
+```
