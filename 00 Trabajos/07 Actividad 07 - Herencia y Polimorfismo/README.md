@@ -1,4 +1,4 @@
-# Actividad 06 – Herencia, Composición y Polimorfismo
+# Actividad 07 – Herencia, Composición y Polimorfismo
 
 > [!TIP]
 > En este ejercicio, la clase **Venta** tendrá un atributo de tipo `Vehiculo`. Gracias al polimorfismo, en ese mismo lugar podremos asignar tanto una `Moto` como un `Auto`, ya que ambos **son** un `Vehiculo`.
