@@ -2,6 +2,8 @@
 
 > [!TIP]
 > En este ejercicio, la clase **Venta** tendrá un atributo de tipo `Vehiculo`. Gracias al polimorfismo, en ese mismo lugar podremos asignar tanto una `Moto` como un `Auto`, ya que ambos **son** un `Vehiculo`.
+> NO se deberías crear clases Vendedor y Comprador. La herencia aquí es para los vehículos (Auto y Moto heredan de Vehiculo), no para las personas.
+> La distinción entre "vendedor" y "comprador" es un rol que juega la persona en la venta, no un tipo diferente de persona.
 
 ## Modelado de Relaciones Complejas: Concesionaria
 
@@ -28,22 +30,22 @@ que el sistema pueda registrar una **venta** de un vehículo especificando su **
 
 A continuación, el código en el que nos vamos a basar para probar el sistema:
 ```java
-public class GestionConcesionaria {
+public class Concecionaria {
+
     public static void main(String[] args) {
         // Creamos los participantes
-        Persona vendedor = new Persona("Juan Pérez", "20-33444555-9");
-        Persona comprador = new Persona("Ana García", "27-40111222-8");
+        Persona vendedor = new Persona("Juan Pérez", "33444555");
+        Persona comprador = new Persona("Ana García", "40111222");
 
         // Creamos los vehículos (Aplicando Polimorfismo)
-        Vehiculo auto1 = new Auto("Toyota", "Corolla", 25000000.00, 4);
-        Vehiculo moto1 = new Moto("Honda", "CB500F", 12000000.00, 500);
+        Vehiculo auto1 = new Auto("Toyota", "Corolla", 33000000, 4);
+        Vehiculo moto1 = new Moto("Honda", "CB500F", 5400000, 500);
 
         // Registramos la venta de un Auto
         Venta factura1 = new Venta(vendedor, comprador, auto1);
 
         System.out.println("--- Procesando Venta de Concesionaria ---");
-        factura1.imprimirFactura();
-        
+        factura1.imprimirFactura();        
         System.out.println("\n------------------------------------------");
         
         // Registramos la venta de una Moto usando el mismo proceso
@@ -51,3 +53,4 @@ public class GestionConcesionaria {
         factura2.imprimirFactura();
     }
 }
+```
