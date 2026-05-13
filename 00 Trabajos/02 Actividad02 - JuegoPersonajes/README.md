@@ -5,7 +5,6 @@ Crear una clase llamada __Personaje__ dentro del paquete juego que permita la ej
 
 ![Captura de pantalla del juego](../../img/01_main_personajes.jpg)
 
-
 ### Código base proporcionado:
 ```java
 package juego;
