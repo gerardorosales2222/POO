@@ -1,4 +1,4 @@
-# Actividad 09 - Estacionamiento Orientado a Objetos
+# Actividad 09 - Canchas Orientadas a Objetos
 
 Crear un Diagrama de Clases UML y programar la solución completa para un complejo de Canchas de Fútbol 5 en lenguaje Java asegurando el correcto funcionamiento y la adecuación a los siguientes requisitos.
 
