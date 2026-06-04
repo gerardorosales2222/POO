@@ -1,81 +1,22 @@
-# Actividad 08 – Estacionamiento Orientado a Objetos
-
-A partir del Diagrama de Clases UML provisto por la cátedra, deberán programar la solución completa en lenguaje Java, asegurando el correcto funcionamiento de las relaciones de Composición fuerte, la implementación de la interfaz ICobrable y la lógica del cálculo de saldos.
-
-![Ejemplo de organización de la actividad](https://raw.githubusercontent.com/gerardorosales2222/POO/main/img/DC_Estacionamiento.jpg)
-
-## Pasos Obligatorios para la Entrega (Workflow de Git)
-
-Para que tu entrega sea evaluada, deberás seguir estrictamente el flujo de trabajo profesional basado en Forks y Pull Requests:
-
-**Paso 1:** Crear tu propio entorno de trabajo
-Entrar al repositorio de la materia en GitHub.
-
-Hacer clic en el botón Fork (esquina superior derecha) para crear una copia exacta del proyecto en tu cuenta personal.
-
-Cloná tu fork localmente en tu computadora usando la terminal:
-
-```bash
-git clone https://github.com/TU_USUARIO/nombre-del-repositorio.git
-```
-
-**Paso 2:** Aislar tu espacio de desarrollo (Uso de Ramas)
-No trabajes sobre la rama main. Antes de tocar cualquier línea de código, debés crear una rama propia que lleve tu apellido en minúsculas:
-
-```bash
-git checkout -b tu-apellido
-```
-
-**Paso 3:** Codificación y Resolución. Dirigite a la carpeta asignada para esta actividad dentro del proyecto.
-
-Programá las clases (Estacionamiento, Alquiler, Isla, Vehiculo e ICobrable) respetando los tipos de datos, modificadores de visibilidad (private/public) y relaciones del diagrama UML.
-
-**Paso 4:** Subir los cambios a GitHub
-Una vez que el código compile perfectamente y el main corra sin errores, guardá y subí tu rama:
-
-```bash
-git add .
-git commit -m "Solución del diagrama de estacionamiento"
-git push origin tu-apellido
-```
-**Paso 5:** Enviar la entrega (Pull Request)
-Entrá a tu repositorio en GitHub (tu fork).
-
-Vas a ver un cartel amarillo que dice "Compare & pull request". Hacé clic ahí.
-
-Asegurate de que la dirección del PR apunte correctamente:
-
-Base repository: El de la materia (rama: main).
-
-Head repository: Tu fork (rama: tu-apellido).
-
-En el título del Pull Request poné: Entrega Actividad Estacionamiento - [Tu Nombre y Apellido].
-
-Hacé clic en "Create pull request".
-
+# Trabajo N° 8 Estacionamiento Modificado
 
 ## Clase main
-
-A continuación una ayuda. Esta será la clase main con la que trabajaremos. Cuando todo esto funcione quiere decir que hicimos bien el ejercicio. 
-
 ```java
+
+
 package estacionamiento;
 
 import java.time.LocalTime;
 import java.util.ArrayList;
 
-/**
- * @author Profe
- */
+
 public class Estacionamiento implements ICobrable {
 
-    private String nombre;
     private ArrayList<Isla> islas = new ArrayList<>();
     
     public Estacionamiento(){}
 
     public Estacionamiento(String nombre) {
-        this.nombre = nombre;
         
         this.islas.add(new Isla(1));
         this.islas.add(new Isla(2));
@@ -114,5 +55,224 @@ public class Estacionamiento implements ICobrable {
 
         predioCentro.cobrar(alquilerAuto);
     }
+
+}
+```
+## Clase Vehiculo
+
+```java
+
+package estacionamiento;
+
+/**
+ *
+ * @author Marisol
+ */
+public class Vehiculo {
+    private String tipo;
+    private String color;
+    private String marcaModelo;
+    private String patente;
+    private float tarifa;
+
+    public Vehiculo() {
+    }
+
+    public Vehiculo(String tipo, String color, String marcaModelo, String patente, float tarifa) {
+        this.tipo = tipo;
+        this.color = color;
+        this.marcaModelo = marcaModelo;
+        this.patente = patente;
+        this.tarifa = tarifa;
+    }
+    
+    
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public String getMarcaModelo() {
+        return marcaModelo;
+    }
+
+    public void setMarcaModelo(String marcaModelo) {
+        this.marcaModelo = marcaModelo;
+    }
+
+    public String getPatente() {
+        return patente;
+    }
+
+    public void setPatente(String patente) {
+        this.patente = patente;
+    }
+
+    public float getTarifa() {
+        return tarifa;
+    }
+
+    public void setTarifa(float tarifa) {
+        this.tarifa = tarifa;
+    }
+    
+}
+
+```
+# Clase Alquiler
+
+```java
+package estacionamiento;
+
+import java.time.LocalTime;
+import java.time.temporal.ChronoUnit;
+
+/**
+ *
+ * @author Marisol
+ */
+public class Alquiler {
+    private LocalTime horaEntrada;
+    private LocalTime horaSalida;
+    private boolean pagado;
+    private Vehiculo vehiculo;
+    private Isla isla;
+
+    public Alquiler(LocalTime entrada, Vehiculo auto, Isla laAsignada) {
+        this.vehiculo=vehiculo;
+    }
+
+    public Alquiler(LocalTime horaEntrada, LocalTime horaSalida, boolean pagado, Vehiculo vehiculo, Isla isla) {
+        this.horaEntrada = horaEntrada;
+        this.horaSalida = horaSalida;
+        this.pagado = pagado;
+        this.vehiculo = vehiculo;
+        this.isla = isla;
+    }
+    
+
+    public LocalTime getHoraEntrada() {
+        return horaEntrada;
+    }
+
+    public void setHoraEntrada(LocalTime horaEntrada) {
+        this.horaEntrada = horaEntrada;
+    }
+
+    public LocalTime getHoraSalida() {
+        return horaSalida;
+    }
+
+    public void setHoraSalida(LocalTime horaSalida) {
+        this.horaSalida = horaSalida;
+    }
+
+    public boolean isPagado() {
+        return pagado;
+    }
+
+    public void setPagado(boolean pagado) {
+        this.pagado = pagado;
+    }
+
+    public Vehiculo getVehiculo() {
+        return vehiculo;
+    }
+
+    public void setVehiculo(Vehiculo vehiculo) {
+        this.vehiculo = vehiculo;
+    }
+
+    public Isla getIsla() {
+        return isla;
+    }
+
+    public void setIsla(Isla isla) {
+        this.isla = isla;
+    }
+
+    float calcularSaldo() {
+   if(horaEntrada==null || horaSalida==null){
+       return 0.0f;}
+   //
+   long minutos=ChronoUnit.MINUTES.between(horaSalida, horaSalida);
+   float HsTotal= minutos / 60.0f; 
+   return HsTotal * vehiculo.getTarifa();}
+
+    void registrarPago() {
+    this.pagado=true;
+            }
+
+    void registrarSalida(LocalTime salida) {
+   this.horaSalida=salida;
+    }
+    
+    
+}
+
+```
+# Clase Isla
+
+```java
+
+package estacionamiento;
+
+/**
+ *
+ * @author Marisol
+ */
+public class Isla {
+
+    private int nro;
+    private boolean estado;
+    
+public Isla(int par) {
+    }
+    public int getNro() {
+        return nro;
+    }
+
+    public void setNro(int nro) {
+        this.nro = nro;
+    }
+
+    public boolean isEstado() {
+        return estado;
+    }
+
+    public void setEstado(boolean estado) {
+        this.estado = estado;
+    }
+    
+    
+}
+
+```
+# Interfaz ICobrable
+
+```java
+
+package estacionamiento;
+
+/**
+ *
+ * @author Marisol
+ */
+public interface ICobrable {
+   public void cobrar(Alquiler transaccion);
+ 
+    
 }
 ```
