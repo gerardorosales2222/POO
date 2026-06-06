@@ -2,7 +2,6 @@
 
 Crear un Diagrama de Clases UML y programar la solución completa para un complejo de Canchas de Fútbol 5 en lenguaje Java asegurando el correcto funcionamiento y la adecuación a los siguientes requisitos.
 
-
 ## Contexto del problema
 Un complejo de canchas de Fútbol 5 necesita un sistema de software para administrar el cobro de sus turnos. El negocio funciona de la siguiente manera:
 
