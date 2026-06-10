@@ -187,3 +187,5 @@ public class Cancha {
 }
 
 ```
+
+![captura de pantalla del uml](https://github.com/agus-guti/POO2/blob/feature/gutierrez/00%20Trabajos/09%20Actividad%2009%20-%20Canchas/Trabajo-Cancha/UML.drawio.png?raw=true)
