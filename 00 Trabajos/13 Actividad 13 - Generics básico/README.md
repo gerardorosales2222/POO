@@ -19,7 +19,7 @@ Diseñe e implemente el concepto de la Caja de Custodia de modo que sea totalmen
 ## Solución
 
 ### CajaCustodia.java
-´´´java
+```java
 package genericsbasic;
 /**
  * @author Profe
@@ -67,9 +67,9 @@ public class CajaCustodia<T> {
         return this.contenido == null;
     }
 }
-´´´
+```
 ### main
-´´´java
+```java
 package genericsbasic;
 
 /**
