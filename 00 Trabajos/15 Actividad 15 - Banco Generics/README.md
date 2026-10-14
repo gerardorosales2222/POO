@@ -6,7 +6,9 @@ Para resolver esto, estructuraremos el proyecto utilizando objetos de transferen
 Partiendo del código base provisto en clase (main), deberán completar y extender la aplicación en Java creando las siguientes clases:
 + Cliente 
 + ClienteDTO
-+ RespuestaDTO<T>.
++ RespuestaDTO<T>
+
+
 ¿Por qué la clase ClienteDTO no incluye el atributo pass ni el id. ¿Qué ventaja de seguridad nos aporta esto?
 
 
