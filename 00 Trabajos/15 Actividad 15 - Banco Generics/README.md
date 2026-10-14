@@ -2,7 +2,7 @@
 En el sistema de un banco, la entidad Cliente maneja información interna y confidencial (por ejemplo, el campo pass o la clave numérica de identificación id). Cuando necesitamos consultar los datos de un usuario para mostrarlos por pantalla o enviarlos a otra capa de la aplicación, nunca debemos exponer la contraseña.
 Para resolver esto, estructuraremos el proyecto utilizando objetos de transferencia (ClienteDTO) y un contenedor genérico de respuestas (RespuestaDTO).
 
-**Consigna: **
+**Consigna:**
 Partiendo del código base provisto en clase (main), deberán completar y extender la aplicación en Java creando las siguientes clases:
 + Cliente 
 + ClienteDTO
@@ -10,8 +10,6 @@ Partiendo del código base provisto en clase (main), deberán completar y extend
 
 
 ¿Por qué la clase ClienteDTO no incluye el atributo pass ni el id. ¿Qué ventaja de seguridad nos aporta esto?
-
-
 
 ## main
 ```java
@@ -101,8 +99,7 @@ public class Cliente {
     public void setPass(String pass) {
         this.pass = pass;
     }
-    
-    
+        
 }
 
 ```
@@ -168,9 +165,7 @@ public class RespuestaDTO<T> {
     public T getDatos() {
         return datos;
     }
-    
-    
-    
+     
 }
 
 ```
