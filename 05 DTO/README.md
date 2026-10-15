@@ -26,3 +26,7 @@ Cuando implementamos la lógica de inicio de sesión (*login*), validamos las cr
 ### 5. El proceso de Mapeo (`convertirADTO`)
 Para transformar una entidad completa en su versión reducida y segura, utilizamos métodos auxiliares de conversión o mapeo (como `convertirADTO`). Este método actúa como un puente que toma la información pública de la entidad original (nombre, correo) y construye un nuevo DTO listo para ser consumido de forma segura.
 
+---
+### Actividad evaluativa:
+
+https://forms.gle/cgDyE23NVNx6ze9K8
