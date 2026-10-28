@@ -7,3 +7,6 @@
 + 5.- Realice la comparativa entre Generics vs. Casteo de Objetos (Object).
 + 6.- De un ejemplo de polimorfismo Paramétrico.
 + 7.- ¿Cuál es la relación entre interfaces y herencia?
++ 8.- ¿Qué tipo de clase no describe cómo se hace algo, sino qué se debe hacer? 
++ 9.- ¿Qué acción se debe realizar para crear un objeto? Explique si se usa memoria al realizar este proceso.
++ 10.- La inmutabilidad de las clases en un entorno que respeta estrictamente la POO ¿Se consigue de qué forma?
